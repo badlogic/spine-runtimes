@@ -18,7 +18,7 @@ jobs:
         java-version: 1.7
     - name: Build spine-libgdx
       working-directory: spine-libgdx/spine-libgdx
-        env:
-          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+      env:
+        SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
+        SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
       run: mvn -s ../../.github/workflows/settings.xml clean deploy
