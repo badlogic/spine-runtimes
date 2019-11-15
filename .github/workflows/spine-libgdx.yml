@@ -2,8 +2,8 @@ name: Java CI
 
 on:
   push:
-  paths:
-    - "spine-libgdx/spine-libgdx"
+    paths:
+      - 'spine-libgdx/**'
 
 jobs:
   build:
