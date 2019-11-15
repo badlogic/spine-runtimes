@@ -1,4 +1,4 @@
- # spine-libgdx
+# spine-libgdx
 
 The spine-libgdx runtime provides functionality to load, manipulate and render [Spine](http://esotericsoftware.com) skeletal animation data using [libgdx](http://www.libgdx.com/).
 
