@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - name: Setup TypeScript
+      uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-      - run: npm install -g typescript
+    - run: npm install -g typescript
     - name: Build spine-ts
       working-directory: spine-ts
       env:
