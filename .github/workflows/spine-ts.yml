@@ -20,3 +20,7 @@ jobs:
       env:
         TS_UPDATE_URL: ${{ secrets.TS_UPDATE_URL }}
       run: ./build.sh
+    - uses: actions/upload-artifact@master
+      with:
+        name: spine-ts-build
+        path: spine-ts/build/
