@@ -24,3 +24,4 @@ jobs:
       with:
         name: spine-ts-build
         path: spine-ts/build/
+    - run: printenv
