@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-BRANCH="$(git symbolic-ref --short HEAD)"
+BRANCH="$(git branch | grep \* | cut -d ' ' -f2)"
 echo "Building spine-ts $BRANCH artifacts"
 tsc -p tsconfig.json
 tsc -p tsconfig.core.json
@@ -17,5 +17,5 @@ then
     zip -j spine-ts.zip build/* player/css/spine-player.css player/example/external/*
     curl -F "file=@spine-ts.zip" "$TS_UPDATE_URL$BRANCH"
 else
-    echo "Not deploying artifacts. TS_UPDATE_URL and BRANCH are not set."
+    echo "Not deploying artifacts. TS_UPDATE_URL not set."
 fi
