@@ -15,6 +15,7 @@ jobs:
       with:
         node-version: '13.x'
     - run: npm install -g typescript
+    - run: echo $GITHUB_REF
     - name: Build spine-ts
       working-directory: spine-ts
       env:
