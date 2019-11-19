@@ -17,7 +17,4 @@ jobs:
     - run: npm install -g typescript
     - name: Build spine-ts
       working-directory: spine-ts
-      env:
-        TS_UPDATE_URL: ${{ secrets.TS_UPDATE_URL }}
       run: ./build.sh
-    - run: zip -j spine-ts.zip spine-ts/build/*
