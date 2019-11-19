@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 
+if [ -z "$GITHUB_REF" ];
+then
+    BRANCH=$(git symbolic-ref --short -q HEAD)
+else
+    BRANCH=${GITHUB_REF#refs/heads/}
+fi
+
 echo "Building spine-ts $BRANCH artifacts"
 tsc -p tsconfig.json
 tsc -p tsconfig.core.json
